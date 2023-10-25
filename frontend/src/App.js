@@ -40,6 +40,7 @@ function App() {
           </label>
         </div>
       </div>
+      <button type='submit' class="btn btn-primary">Sign in</button>
     </form>
   );
 }
