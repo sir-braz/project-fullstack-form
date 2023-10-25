@@ -11,6 +11,10 @@ function App() {
         <label for="inputPassword4">Password</label>
         <input type='password' class="form-control" id='inputPassword' placeholder='Password' />
       </div>
+      <div className='form-group'>
+        <label for="inputAddress2">Address</label>
+        <input type='text' class="form-control" id="iputAddress2" placeholder='Apartment, studio, or floor'></input>
+      </div>
     </form>
   );
 }
