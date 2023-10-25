@@ -3,8 +3,9 @@ import './App.css';
 function App() {
   return (
     <form>
-      <div className='form-row'>
+      <div class='form-row'>
         <label for="inputEmail4">Email</label>
+        <input type='email' class='form-control' id='inputEmail4' placeholder='Email' />
       </div>
     </form>
   );
