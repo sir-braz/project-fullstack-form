@@ -25,6 +25,13 @@ function App() {
           <input type='text' class="form-control" id='inputCity'></input>
         </div>
       </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id='inputState' class="form-control">
+          <option>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
     </form>
   );
 }
