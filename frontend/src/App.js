@@ -32,6 +32,14 @@ function App() {
           <option>...</option>
         </select>
       </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type='checkbox' id='gridCheck'></input>
+          <label class="form-check-label" for="gridCheck">
+            Check Me
+          </label>
+        </div>
+      </div>
     </form>
   );
 }
