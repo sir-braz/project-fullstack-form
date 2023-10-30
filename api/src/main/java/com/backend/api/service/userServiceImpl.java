@@ -45,6 +45,10 @@ public class userServiceImpl implements UserService {
 
     @Override
     public void updateUser(User user, Long userId) {
+        try{
 
+        }catch (BackendException ex){
+            throw new BackendException("Error to update user with id");
+        }
     }
 }
