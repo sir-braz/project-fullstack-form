@@ -32,6 +32,9 @@ public class userController {
     }
 
     @GetMapping(value = "/api/users/{id}")
+    public ResponseEntity<List<User>> listUserWithId(@PathVariable Long userId){
+
+    }
 
     @DeleteMapping(value = "/api/users/{id}")
 
