@@ -36,7 +36,11 @@ public class userServiceImpl implements UserService {
 
     @Override
     public void deleteUserById(Long userId) {
+        try{
 
+        }catch (BackendException ex){
+            throw new BackendException("Error to delete user with id");
+        }
     }
 
     @Override
