@@ -56,6 +56,7 @@ public class userController {
     @DeleteMapping(value = "/api/users/{id}")
     public ResponseEntity<String> deleteUserWithId(@PathVariable Long userId){
         try{
+            userService.deleteUserById(userId);
             return ResponseEntity.ok("Delete user with id sucessfully");
         }catch (BackendException ex){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to delete user with id");
