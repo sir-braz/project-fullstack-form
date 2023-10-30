@@ -37,6 +37,9 @@ public class userController {
     }
 
     @DeleteMapping(value = "/api/users/{id}")
+    public ResponseEntity<User> deleteUserWithId(@PathVariable Long userId){
+
+    }
 
     @PutMapping(value = "/api/users/{id}")
 }
