@@ -5,7 +5,6 @@ import com.backend.api.service.UserService;
 import com.backend.api.utility.BackendException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -52,11 +51,11 @@ public class userController {
     }
 
     @DeleteMapping(value = "/api/users/{id}")
-    public ResponseEntity<User> deleteUserWithId(@PathVariable Long userId){
+    public ResponseEntity<String> deleteUserWithId(@PathVariable Long userId){
         try{
-
+            return ResponseEntity.ok("Delete user with id sucessfully");
         }catch (BackendException ex){
-
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to delete user with id");
         }
     }
     @PutMapping(value = "/api/users/{id}")
