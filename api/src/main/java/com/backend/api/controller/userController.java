@@ -24,6 +24,7 @@ public class userController {
     @PostMapping(value = "/api/register")
     public ResponseEntity<String> createUser(@RequestBody User user){
         try{
+            userService.save(user);
             return ResponseEntity.ok("Create user successfully");
         }catch (BackendException ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to create users");
