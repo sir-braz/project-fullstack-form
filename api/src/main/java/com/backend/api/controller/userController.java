@@ -22,11 +22,11 @@ public class userController {
     }
 
     @PostMapping(value = "/api/register")
-    public ResponseEntity<User> createUser(@RequestBody User user){
+    public ResponseEntity<String> createUser(@RequestBody User user){
         try{
-
-        }catch (BackendException ex){
-
+            return ResponseEntity.ok("Create user successfully");
+        }catch (BackendException ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to create users");
         }
     }
 
@@ -35,7 +35,7 @@ public class userController {
         try{
             return ResponseEntity.ok("Get All Users successfully");
         }catch (BackendException ex) {
-            return ResponseEntity.ok("Errot to get all users");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to get all users");
         }
     }
 
@@ -44,7 +44,7 @@ public class userController {
         try{
             return ResponseEntity.ok("Get user with id successfully");
         }catch (BackendException ex) {
-            return ResponseEntity.ok("Error to get user with id");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to get user with id");
         }
     }
 
