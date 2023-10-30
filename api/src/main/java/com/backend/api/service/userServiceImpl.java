@@ -40,7 +40,7 @@ public class userServiceImpl implements UserService {
     @Override
     public User getUserById(Long userId) {
         try{
-
+            return userRepository.findById(userId).orElse(null);
         }catch (BackendException ex){
             throw new BackendException("Error to get user by id");
         }
