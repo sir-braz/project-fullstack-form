@@ -23,4 +23,6 @@ public class userController {
     @PostMapping(value = "/api/register")
 
     @GetMapping(value = "/api/users")
+
+    @GetMapping(value = "/api/users/{id}")
 }
