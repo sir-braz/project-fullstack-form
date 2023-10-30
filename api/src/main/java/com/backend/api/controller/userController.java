@@ -61,7 +61,7 @@ public class userController {
         try{
             return ResponseEntity.ok("Update with id successfully");
         }catch (BackendException ex){
-            return (ResponseEntity<String>) ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to update user with id");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to update user with id");
         }
     }
 }
