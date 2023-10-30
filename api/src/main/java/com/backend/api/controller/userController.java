@@ -2,7 +2,10 @@ package com.backend.api.controller;
 
 import com.backend.api.entity.User;
 import com.backend.api.service.UserService;
+import com.backend.api.utility.BackendException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +28,7 @@ public class userController {
     public ResponseEntity<User> createUser(@RequestBody User user){
         try{
 
-        }catch (){
+        }catch (BackendException ex){
 
         }
     }
@@ -34,7 +37,7 @@ public class userController {
     public ResponseEntity<List<User>> listAllUsers(){
         try{
 
-        }catch (){
+        }catch (BackendException ex){
 
         }
     }
@@ -43,7 +46,7 @@ public class userController {
     public ResponseEntity<List<User>> listUserWithId(@PathVariable Long userId){
         try{
 
-        }catch (){
+        }catch (BackendException ex){
 
         }
     }
@@ -52,16 +55,16 @@ public class userController {
     public ResponseEntity<User> deleteUserWithId(@PathVariable Long userId){
         try{
 
-        }catch (){
+        }catch (BackendException ex){
 
         }
     }
     @PutMapping(value = "/api/users/{id}")
-    public ResponseEntity<User> updateUserWithId(@RequestBody User user, @PathVariable Long userId) {
+    public ResponseEntity<String> updateUserWithId(@RequestBody User user, @PathVariable Long userId) {
         try{
-
-        }catch (){
-
+            return ResponseEntity.ok("Update with id successfully");
+        }catch (BackendException ex){
+            return (ResponseEntity<String>) ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to update user with id");
         }
     }
 }
