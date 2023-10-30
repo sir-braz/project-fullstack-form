@@ -3,10 +3,7 @@ package com.backend.api.controller;
 import com.backend.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -25,4 +22,6 @@ public class userController {
     @GetMapping(value = "/api/users")
 
     @GetMapping(value = "/api/users/{id}")
+
+    @DeleteMapping(value = "/api/users/{id}")
 }
