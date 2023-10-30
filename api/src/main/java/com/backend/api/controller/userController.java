@@ -46,6 +46,7 @@ public class userController {
     @GetMapping(value = "/api/users/{id}")
     public ResponseEntity<String> listUserWithId(@PathVariable Long userId){
         try{
+            User user = userService.getUserById(userId);
             return ResponseEntity.ok("Get user with id successfully");
         }catch (BackendException ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to get user with id");
