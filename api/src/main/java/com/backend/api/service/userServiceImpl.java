@@ -49,7 +49,7 @@ public class userServiceImpl implements UserService {
     @Override
     public void deleteUserById(Long userId) {
         try{
-
+            userRepository.deleteById(userId);
         }catch (BackendException ex){
             throw new BackendException("Error to delete user with id");
         }
