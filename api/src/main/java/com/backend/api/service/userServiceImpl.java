@@ -27,7 +27,11 @@ public class userServiceImpl implements UserService {
 
     @Override
     public User getUserById(Long userId) {
-        return null;
+        try{
+
+        }catch (BackendException ex){
+            throw new BackendException("Error to get user by id");
+        }
     }
 
     @Override
