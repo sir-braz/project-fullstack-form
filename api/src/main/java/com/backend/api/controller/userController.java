@@ -40,6 +40,8 @@ public class userController {
     public ResponseEntity<User> deleteUserWithId(@PathVariable Long userId){
 
     }
-
     @PutMapping(value = "/api/users/{id}")
+    public ResponseEntity<User> updateUserWithId(@RequestBody User user, @PathVariable Long userId) {
+
+    }
 }
