@@ -31,7 +31,7 @@ public class userServiceImpl implements UserService {
     @Override
     public List<User> getAllUsers() {
         try {
-
+            return (List<User>) userRepository.findAll();
         }catch (Exception ex){
             throw new BackendException("Error to get all users");
         }
