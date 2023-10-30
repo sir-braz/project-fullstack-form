@@ -3,9 +3,9 @@ package com.backend.api.service;
 import com.backend.api.entity.User;
 import com.backend.api.repository.UserRepository;
 import com.backend.api.utility.BackendException;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Component
