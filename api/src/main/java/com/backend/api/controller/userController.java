@@ -65,6 +65,7 @@ public class userController {
     @PutMapping(value = "/api/users/{id}")
     public ResponseEntity<String> updateUserWithId(@RequestBody User user, @PathVariable Long userId) {
         try{
+            userService.updateUser(user, userId);
             return ResponseEntity.ok("Update with id successfully");
         }catch (BackendException ex){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error to update user with id");
