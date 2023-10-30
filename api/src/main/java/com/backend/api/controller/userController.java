@@ -42,12 +42,13 @@ public class userController {
     }
 
     @GetMapping(value = "/api/users/{id}")
-    public ResponseEntity<List<User>> listUserWithId(@PathVariable Long userId){
+    public ResponseEntity<String> listUserWithId(@PathVariable Long userId){
         try{
-
+            return ResponseEntity.ok("Get user with id successfully");
         }catch (BackendException ex){
 
         }
+        return null;
     }
 
     @DeleteMapping(value = "/api/users/{id}")
