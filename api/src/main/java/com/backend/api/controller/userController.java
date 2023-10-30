@@ -9,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @CrossOrigin(origins = "*")
 @Service
@@ -33,11 +31,11 @@ public class userController {
     }
 
     @GetMapping(value = "/api/users")
-    public ResponseEntity<List<User>> listAllUsers(){
+    public ResponseEntity<String> listAllUsers(){
         try{
-
-        }catch (BackendException ex){
-
+            return ResponseEntity.ok("Get All Users successfully");
+        }catch (BackendException ex) {
+            return ResponseEntity.ok("Errot to get all users");
         }
     }
 
@@ -45,10 +43,9 @@ public class userController {
     public ResponseEntity<String> listUserWithId(@PathVariable Long userId){
         try{
             return ResponseEntity.ok("Get user with id successfully");
-        }catch (BackendException ex){
-
+        }catch (BackendException ex) {
+            return ResponseEntity.ok("Error to get user with id");
         }
-        return null;
     }
 
     @DeleteMapping(value = "/api/users/{id}")
