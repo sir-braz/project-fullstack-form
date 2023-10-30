@@ -58,7 +58,16 @@ public class userServiceImpl implements UserService {
     @Override
     public void updateUser(User user, Long userId) {
         try{
-
+            User existingUser = userRepository.findById(userId).orElse(null);
+            if(existingUser != null){
+                existingUser.setAddress(user.getAddress());
+                existingUser.setChecked(user.isChecked());
+                existingUser.setCity(user.getCity());
+                existingUser.setEmail(user.getEmail());
+                existingUser.setAddress2(user.getAddress2());
+                existingUser.setState(user.getState());
+                existingUser.setPassword(user.getPassword());
+            }
         }catch (BackendException ex){
             throw new BackendException("Error to update user with id");
         }
