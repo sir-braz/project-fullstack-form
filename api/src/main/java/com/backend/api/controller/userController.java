@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 @Service
@@ -25,6 +27,9 @@ public class userController {
     }
 
     @GetMapping(value = "/api/users")
+    public ResponseEntity<List<User>> listAllUsers(){
+
+    }
 
     @GetMapping(value = "/api/users/{id}")
 
